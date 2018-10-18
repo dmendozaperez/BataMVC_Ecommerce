@@ -1,0 +1,53 @@
+﻿@using BataEcommerce.BE.Ecommerce;
+@{
+    Layout = null;
+    List<BeEcMenu> lstMenuItem = (List<BeEcMenu>)Session["Menu"];
+}
+<div id="sidebar-menu" class="main_menu_side hidden-print main_menu">
+    <div class="menu_section">
+        <h3>General</h3>
+        <ul class="nav side-menu">
+            @foreach (var item in lstMenuItem)
+            {
+                if ((item.fun_id != 0) && item.fun_padre == item.fun_id)
+                {
+                    <li>
+                        <a data-toggle="tooltip" data-placement="top" title="@item.fun_descripcion"><i class="fa fa-folder"></i> @item.fun_nombre <span class="fa fa-chevron-down"></span></a>
+                        <ul class="nav child_menu">
+                            @foreach (var subm in lstMenuItem.Where(p => p.fun_padre == item.fun_id && p.fun_padre != p.fun_id))
+                            {
+                                if (subm.apl_url.Trim() == "")
+                                {
+                                    <li>
+                                        <a data-toggle="tooltip" data-placement="top" title="@subm.fun_descripcion">@subm.fun_nombre <span class="fa fa-chevron-down"></span></a>
+                                        <ul class="nav child_menu">
+                                            @foreach (var subm2 in lstMenuItem.Where(p => p.fun_padre == subm.fun_id))
+                                            {
+                                                <li><a data-toggle="tooltip" data-placement="top" title="@subm.fun_descripcion" href="@Url.Action(subm2.apl_action, subm2.apl_controller)">@subm2.fun_nombre</a></li>
+                                            }
+                                        </ul>
+                                    </li>
+                                }
+                                else
+                                {
+                                    <li><a data-toggle="tooltip" data-placement="top" title="@subm.fun_descripcion" href="@Url.Action(subm.apl_action, subm.apl_controller)">@subm.fun_nombre</a></li>
+                                }
+                            }
+                        </ul>
+                    </li>
+                }
+            }
+            @*<li><a href="@Url.Action("Panel", "App")"><i class="fa fa-home"></i>Inicio</a></li>
+                <li>
+                    <a><i class="fa fa-bar-chart-o"></i> Reportes <span class="fa fa-chevron-down"></span></a>
+                    <ul class="nav child_menu">
+                        <li><a href="@Url.Action("ReporteVentasView", "Reporte")">Pedidos Ecommerce</a></li>
+                        <li><a href="@Url.Action("ReportePedidoView", "Reporte")">Pedidos Caídos</a></li>
+                        <li><a href="@Url.Action("ReporteStocksView", "Reporte")">Stocks Productos</a></li>
+                        <li><a href="@Url.Action("ReporteRankingView", "Reporte")">Ranking Productos</a></li>
+                    </ul>
+                </li>*@
+        </ul>
+    </div>
+
+</div>

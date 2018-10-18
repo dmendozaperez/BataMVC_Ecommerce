@@ -1,0 +1,93 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{4F41B605-A331-405F-986F-AC5326CC5FBE}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>BataEcommerce.BL.Components</RootNamespace>
+    <AssemblyName>BataEcommerce.BL.Components</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Ecommerce\EcAplicacionService.cs" />
+    <Compile Include="Ecommerce\EcBasicoService.cs" />
+    <Compile Include="Ecommerce\EcConexionService.cs" />
+    <Compile Include="Ecommerce\EcEstadoService.cs" />
+    <Compile Include="Ecommerce\EcFuncionAplicacionService.cs" />
+    <Compile Include="Ecommerce\EcFuncionService.cs" />
+    <Compile Include="Ecommerce\EcLiderService.cs" />
+    <Compile Include="Ecommerce\EcMenuItemsService.cs" />
+    <Compile Include="Ecommerce\EcMenuService.cs" />
+    <Compile Include="Ecommerce\EcPersonalService.cs" />
+    <Compile Include="Ecommerce\EcPromotorService.cs" />
+    <Compile Include="Ecommerce\EcRolFuncionService.cs" />
+    <Compile Include="Ecommerce\EcRolService.cs" />
+    <Compile Include="Ecommerce\EcUsuarioService.cs" />
+    <Compile Include="Ecommerce\EcUsurioRolService.cs" />
+    <Compile Include="Ecommerce\EcSistemaService.cs" />
+    <Compile Include="Prestashop\PsOrderStateService.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Prestashop\PsCategoryService.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\BataEcommerce.BE.Ecommerce\BataEcommerce.BE.Ecommerce.csproj">
+      <Project>{be28c573-a708-4269-9097-e9da18fb4daa}</Project>
+      <Name>BataEcommerce.BE.Ecommerce</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\BataEcommerce.BE.Prestashop\BataEcommerce.BE.Prestashop.csproj">
+      <Project>{2ef3ecb7-0d6d-4516-9ae8-581091a41f6c}</Project>
+      <Name>BataEcommerce.BE.Prestashop</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\BataEcommerce.Util\BataEcommerce.Util.csproj">
+      <Project>{ab7852c1-8854-43dd-a42f-4231513bdbec}</Project>
+      <Name>BataEcommerce.Util</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\BataEcommerce.DA.Ecommerce\BataEcommerce.DA.Ecommerce.csproj">
+      <Project>{9ECD0DDE-1C24-4151-A03F-B66ECDF60EB2}</Project>
+      <Name>BataEcommerce.DA.Ecommerce</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\BataEcommerce.DA.Prestashop\BataEcommerce.DA.Prestashop.csproj">
+      <Project>{84ef9c07-0f62-4370-bf61-fd4373f5d258}</Project>
+      <Name>BataEcommerce.DA.Prestashop</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

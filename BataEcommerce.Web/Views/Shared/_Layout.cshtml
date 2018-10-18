@@ -1,0 +1,122 @@
+﻿<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>@ViewBag.Title - Bata Report App</title>
+    <link rel="icon" type="image/x-icon" href="@Url.Content("~/Images/bata-favicon.png")" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,600i,700,800|Roboto:300,400,400i,700,900" />
+    @Styles.Render("~/Scripts/vendors/bootstrap/dist/css/bootstrap.min.css")
+    @Styles.Render("~/Scripts/vendors/font-awesome/css/font-awesome.min.css")
+    @Styles.Render("~/Scripts/vendors/pnotify/dist/pnotify.css")
+    @Styles.Render("~/Scripts/vendors/pnotify/dist/pnotify.buttons.css")
+    @Styles.Render("~/Scripts/vendors/pnotify/dist/pnotify.nonblock.css")
+    @RenderSection("ViewContent", required: false)
+    @Styles.Render("~/Content/custom.css")
+    @Styles.Render("~/Content/bata.app.style.css")
+</head>
+<body class="nav-md">
+    <div id="pageWrapper" class="container body">
+        <div class="main_container">
+            <div class="col-md-3 left_col">
+                <div class="left_col scroll-view">
+                    <div class="navbar nav_title" style="border: 0;">
+                        <a href="@Url.Action("Login", "App")" class="site_title"><img src="@Url.Content("~/Images/bata-46x46.png")" width=46 height=46 alt="Bata Perú"> <span>Bata Perú</span></a>
+                    </div>
+
+                    <div class="clearfix"></div>
+
+                    <!-- menu profile quick info -->
+                    <div class="profile">
+                        <div class="profile_pic">
+                            <img src="@Url.Content("~/Images/user-it.png")"  class="img-circle profile_img">
+                        </div>
+                        <div class="profile_info">
+                            <span>Bienvenido,</span>
+                            <h2>@Session["Usuario"]</h2>
+                        </div>
+                    </div>
+                    <!-- /menu profile quick info -->
+                    <br />
+                    <!-- sidebar menu -->
+                    @Html.Partial("_LayoutMenuLeft")
+                    <!-- /sidebar menu -->
+                    <!-- /menu footer buttons -->
+                    <div class="sidebar-footer hidden-small">
+                        <a data-toggle="tooltip" data-placement="top" title="Configuración">
+                            <span class="glyphicon glyphicon-cog" aria-hidden="true"></span>
+                        </a>
+                        <a data-toggle="tooltip" data-placement="top" title="Pantalla Completa">
+                            <span class="glyphicon glyphicon-fullscreen" aria-hidden="true"></span>
+                        </a>
+                        <a data-toggle="tooltip" data-placement="top" title="Bloquear">
+                            <span class="glyphicon glyphicon-eye-close" aria-hidden="true"></span>
+                        </a>
+                        <a data-toggle="tooltip" data-placement="top" title="Cerrar Sesión" href="@Url.Action("Login", "App")">
+                            <span class="glyphicon glyphicon-off" aria-hidden="true"></span>
+                        </a>
+                    </div>
+                    <!-- /menu footer buttons -->
+
+                </div>
+            </div>
+
+            <!-- top navigation -->
+            <div class="top_nav">
+
+                <div class="nav_menu">
+                    <nav class="" role="navigation">
+                        <div class="nav toggle">
+                            <a id="menu_toggle"><i class="fa fa-bars"></i></a>
+                        </div>
+                    </nav>
+                    <ul class="nav navbar-nav navbar-right">
+                        <li class="">
+                            <a href="javascript:;" class="user-profile dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+                                <img src="@Url.Content("~/Images/user-it.png")" class="img-circle profile_img">@Session["Usuario"] &nbsp;<span class="fa fa-angle-down"></span>
+                            </a>
+                            <ul class="dropdown-menu dropdown-usermenu pull-right">
+                                <li><a href="javascript:;">Perfil</a></li>
+                                <li><a href="javascript:;">Configuración</a></li>
+                                <li><a href="javascript:;">Ayuda</a></li>
+                                <li><a href="@Url.Action("Login", "App")"><i class="fa fa-sign-out pull-right"></i> Cerrar Sesión</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+
+                </div>
+
+            </div>
+            <!-- /top navigation -->
+            <!-- page content -->
+            <div id="page_wrapper" class="right_col" role="main">
+                @RenderBody()
+            </div>
+            <!-- /page content -->
+            <!-- footer content -->
+            <footer>
+                <div class="pull-left">Área de Sistemas - Bata Perú - &copy; @DateTime.Now.Year</div>
+                <div class="pull-right">Bata Report App vr.0.0.1</div>
+                <div class="clearfix"></div>
+            </footer>
+            <!-- /footer content -->
+        </div>
+    </div>
+    <input type="hidden" id="sid" value="@Session["Session"]" />
+    @Html.Partial("_GlobalJsPartial")
+    @Scripts.Render("~/Scripts/vendors/jquery/dist/jquery.min.js")
+    @Scripts.Render("~/Scripts/vendors/bootstrap/dist/js/bootstrap.min.js")
+    @Scripts.Render("~/Scripts/vendors/bootstrap/js/tooltip.js")
+    @*@Scripts.Render("~/Scripts/vendors/fastclick/lib/fastclick.js")*@
+    @Scripts.Render("~/Scripts/vendors/pnotify/dist/pnotify.js")
+    @Scripts.Render("~/Scripts/vendors/pnotify/dist/pnotify.buttons.js")
+    @Scripts.Render("~/Scripts/vendors/pnotify/dist/pnotify.nonblock.js")
+    @Scripts.Render("~/Scripts/vendors/parsleyjs/dist/parsley.min.js")
+    @Scripts.Render("~/Scripts/vendors/parsleyjs/dist/i18n/es.js")
+    @Scripts.Render("~/Scripts/custom.js")
+    @Scripts.Render("~/Scripts/bata.app.util.js")
+    @RenderSection("ViewScripts", required: false)
+</body>
+</html>

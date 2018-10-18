@@ -1,0 +1,182 @@
+﻿<div class="">
+    <div class="page-title">
+        <div class="title_left">
+            <img src="@Url.Content("~/Images/form-datos.png")" alt="" class="pull-left" style="width:48px; height:48px;">
+            <h2>@ViewBag.Title <small>@ViewBag.SubTitle</small></h2>
+        </div>
+    </div>
+    <div class="clearfix"></div>
+    <div class="">
+        <form id="frmGrabar" data-parsley-validate>
+            <div class="col-md-12 col-sm-12 col-xs-12">
+                <div class="x_panel">
+                    <div class="x_content">
+                        <div class="well">
+                            <p>
+                                Digite el número de documento (sin puntos, comas o espacios) del usuario a registrar, para verificar si es un documento libre y se puede proceder
+                            </p>
+
+                            <div class="row row-eq-height">
+                                <div class="form-group col-md-3">
+                                    <label class="control-label" for="txtNumDoc">Número de Doc.</label>
+                                    <input type="text" name="txtNumDoc" id="txtNumDoc" class="form-control" maxlength="11" data-parsley-maxlength="11" data-parsley-maxlength-message="Ingrese un Número Doc. válido." required="required">
+                                </div>
+                                <div class="form-group col-md-3">
+                                    <button type="submit" class="btn btn-success row-fix-button" name="btnValidarDoc" id="btnValidarDoc" onclick="ValidarDocumento(event)"><i class="fa fa-check"></i> Validar Doc.</button>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="x_panel panel-collapse collapse" id="pnlInformacion">
+                    <div class="x_title">
+                        <i class="fa fa-user small"></i><h3>Datos Básicos de Información Personal</h3>
+                        <div class="clearfix"></div>
+                    </div>
+                    <div class="x_content">
+                        <div class="row">
+                            <div class="form-group col-md-3">
+                                <label class="control-label" for="selTipoDocumento">Tipo Documento</label>
+                                <select class="select2_single form-control" name="selTipoDocumento" id="selTipoDocumento" required="required"></select>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="form-group col-md-3">
+                                <label class="control-label" for="txtPrimerNombre">Primer Nombre</label>
+                                <input type="text" name="txtPrimerNombre" id="txtPrimerNombre" class="form-control" maxlength="55" data-parsley-maxlength="55" data-parsley-maxlength-message="Ingrese el Primer Nombre válido." required="required">
+                            </div>
+                            <div class="form-group col-md-3">
+                                <label class="control-label" for="txtSegundoNombre">Segundo Nombre</label>
+                                <input type="text" name="txtSegundoNombre" id="txtSegundoNombre" class="form-control" maxlength="55" data-parsley-maxlength="55" data-parsley-maxlength-message="Ingrese el Segun Nombre válido.">
+                            </div>
+                            <div class="form-group col-md-3">
+                                <label class="control-label" for="txtPrimerApellido">Primer Apellido</label>
+                                <input type="text" name="txtPrimerApellido" id="txtPrimerApellido" class="form-control" maxlength="55" data-parsley-maxlength="55" data-parsley-maxlength-message="Ingrese el Primer Apellido válido." required="required">
+                            </div>
+                            <div class="form-group col-md-3">
+                                <label class="control-label" for="txtSegundoApellido">Segundo Apellido</label>
+                                <input type="text" name="txtSegundoApellido" id="txtSegundoApellido" class="form-control" maxlength="55" data-parsley-maxlength="55" data-parsley-maxlength-message="Ingrese el Segun Apellido válido." required="required">
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="form-group col-md-3">
+                                <label class="control-label" for="dtFechaNacimiento">Fecha Nacimiento</label>
+                                <div class="col-md-12 xdisplay_inputx form-group has-feedback">
+                                    <input type="text" name="dtFechaNacimiento" id="dtFechaNacimiento" class="form-control has-feedback-left" placeholder="dd/mm/yyyy" maxlength="10" data-parsley-minlength="10" data-parsley-minlength-message="Ingrese un formato de Fecha Correcta." readonly="readonly" required="required">
+                                    <span class="fa fa-calendar-o form-control-feedback left" aria-hidden="true"></span>
+                                </div>
+                            </div>
+                            <div class="form-group col-md-3">
+                                <label class="control-label" for="chkSexo">Sexo</label>
+                                <div class="">
+                                    M: <input type="radio" class="flat" name="chkSexo" id="chkMasculino" value="M" />
+                                    F: <input type="radio" class="flat" name="chkSexo" id="chkFemenino" value="F" />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="x_panel" id="pnlTipoPersona">
+                    <div class="x_title">
+                        <i class="fa fa-suitcase small"></i><h3>Tipo de persona y otros aspectos</h3>
+                        <div class="clearfix"></div>
+                    </div>
+                    <div class="x_content">
+                        <div class="row">
+                            <div class="form-group col-md-3">
+                                <label class="control-label" for="selTipoPersona">Tipo de Persona</label>
+                                <select class="select2_single form-control" name="selTipoPersona" id="selTipoPersona" required="required"></select>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="form-group col-md-3">
+                                <label class="control-label" for="txtEmail">E-mail</label>
+                                <input type="text" name="txtEmail" id="txtEmail" class="form-control" maxlength="55" data-parsley-maxlength="55" data-parsley-maxlength-message="Ingrese un Correo Eléctronico válido." required="required">
+                            </div>
+                            <div class="form-group col-md-3">
+                                <label class="control-label" for="txtTelefono">Teléfono</label>
+                                <input type="text" name="txtTelefono" id="txtTelefono" class="form-control" maxlength="55" data-parsley-maxlength="55" data-parsley-maxlength-message="Ingrese un Teléfono válido." required="required">
+                            </div>
+                            <div class="form-group col-md-3">
+                                <label class="control-label" for="txtFax">Número Fax</label>
+                                <input type="text" name="txtFax" id="txtFax" class="form-control" maxlength="55" data-parsley-maxlength="55" data-parsley-maxlength-message="Ingrese un número Fax válido.">
+                            </div>
+                            <div class="form-group col-md-3">
+                                <label class="control-label" for="txtCelular">Número Celular</label>
+                                <input type="text" name="txtCelular" id="txtCelular" class="form-control" maxlength="55" data-parsley-maxlength="55" data-parsley-maxlength-message="Ingrese un número Celular válido." required="required">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="x_panel" id="pnlUbicacion">
+                    <div class="x_title">
+                        <i class="fa fa-globe small"></i><h3>Ubicación</h3>
+                        <div class="clearfix"></div>
+                    </div>
+                    <div class="x_content">
+                        <div class="row">
+                            <div class="form-group col-md-3">
+                                <label class="control-label" for="selDepartamento">Departamento</label>
+                                <select class="select2_single form-control" name="selDepartamento" id="selDepartamento" required="required"></select>
+                            </div>
+                            <div class="form-group col-md-3">
+                                <label class="control-label" for="selProvincia">Provincia</label>
+                                <select class="select2_single form-control" name="selProvincia" id="selProvincia" required="required"></select>
+                            </div>
+                            <div class="form-group col-md-3">
+                                <label class="control-label" for="selDistrito">Distrito</label>
+                                <select class="select2_single form-control" name="selDistrito" id="selDistrito" required="required"></select>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="form-group col-md-12">
+                                <label class="control-label" for="txtDireccion">Dirección</label>
+                                <input type="text" name="txtDireccion" id="txtDireccion" class="form-control" maxlength="55" data-parsley-maxlength="55" data-parsley-maxlength-message="Ingrese una dirección válido." required="required">
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="form-group col-md-3">
+                                <label class="control-label" for="selArea">Área de Usuario</label>
+                                <select class="select2_single form-control" name="selArea" id="selArea" required="required"></select>
+                            </div>
+                        </div>
+                        <div class="divider-dashed"></div>
+                        <div class="row">
+                            <div class="form-group col-md-3">
+                                <button type="submit" class="btn btn-success" name="btnRegistrar" id="btnRegistrar" onclick="Grabar(event)"><i class="fa fa-save"></i> Guardar</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <input type="hidden" id="hddAccion" name="hddAccion" value="" />
+                <input type="hidden" id="hddSexo" name="hddSexo" value="" />
+                <input type="hidden" id="hddBasicoId" name="hddBasicoId" value="" />
+            </div>
+        </form>
+    </div>
+</div>
+
+@section ViewContent {
+    @Styles.Render("~/Scripts/vendors/select2/dist/css/select2.min.css")
+    @Styles.Render("~/Scripts/vendors/iCheck/skins/square/red.css")
+}
+@section ViewScripts {
+    @Scripts.Render("~/Scripts/vendors/select2/dist/js/select2.full.min.js")
+    @Scripts.Render("~/Scripts/vendors/select2/dist/js/i18n/es.js")
+    @Scripts.Render("~/Scripts/vendors/parsleyjs/dist/parsley.js")
+    @Scripts.Render("~/Scripts/vendors/parsleyjs/dist/i18n/es.js")
+    @Scripts.Render("~/Scripts/moment/moment.min.js")
+    @Scripts.Render("~/Scripts/moment/locale/es.js")
+    @Scripts.Render("~/Scripts/datepicker/daterangepicker.js")
+    @Scripts.Render("~/Scripts/vendors/iCheck/icheck.min.js")
+    @Scripts.Render("~/Scripts/vendors/datatables.net/js/jquery.dataTables.min.js")
+    @Scripts.Render("~/Scripts/vendors/datatables.net-buttons/js/dataTables.buttons.min.js")
+    @Scripts.Render("~/Scripts/vendors/datatables.net-buttons-bs/js/buttons.bootstrap.min.js")
+    @Scripts.Render("~/Scripts/vendors/datatables.net-fixedheader/js/dataTables.fixedHeader.min.js")
+    @Scripts.Render("~/Scripts/vendors/datatables.net-keytable/js/dataTables.keyTable.min.js")
+    @Scripts.Render("~/Scripts/vendors/datatables.net-responsive/js/dataTables.responsive.min.js")
+    @Scripts.Render("~/Scripts/vendors/datatables.net-responsive-bs/js/responsive.bootstrap.js")
+    @Scripts.Render("~/Scripts/vendors/datatables.net-scroller/js/datatables.scroller.min.js")
+    @Scripts.Render("~/Scripts/bata.app.usuario.mantenimiento.js")
+}

@@ -1,0 +1,78 @@
+﻿<div class="">
+    <div class="page-title">
+        <div class="title_left">
+            <img src="@Url.Content("~/Images/reporte-icono.png")" alt="" class="pull-left" style="width:48px; height:48px;">
+            <h2>@ViewBag.Title</h2>
+        </div>
+    </div>
+    <div class="clearfix"></div>
+    <div class="">
+        <div class="col-md-12 col-sm-12 col-xs-12">
+            <div class="x_panel">
+                <div class="x_title">
+                    <i class="fa fa-filter small icon-title"></i><h3>@ViewBag.SubTitle</h3>
+                    <div class="clearfix"></div>
+                </div>
+                <div class="x_content">
+                    <div class="well">
+                        <form id="frmConsulta" data-parsley-validate>
+                            <div class="row">
+                                <div class="form-group col-md-1">
+                                    <label class="control-label" for="txtProCod">Cód.Prod.</label>
+                                    <input type="text" name="txtProCod" id="txtProCod" class="form-control" maxlength="32" data-parsley-maxlength="32" data-parsley-maxlength-message="Ingrese un Código de Producto válido.">
+                                </div>
+                                <div class="form-group col-md-6">
+                                    <label class="control-label" for="txtProNom">Nombre Prod.</label>
+                                    <input type="text" name="txtProNom" id="txtProNom" class="form-control" maxlength="128" data-parsley-maxlength="128" data-parsley-maxlength-message="Ingrese un Nombre de Producto válido.">
+                                </div>
+                                <div class="form-group col-md-2">
+                                    <label class="control-label" for="selCategoria">Categoría</label>
+                                    <select class="select2_single form-control" name="selCategoria" id="selCategoria"></select>
+                                </div>
+                                <div class="form-group col-md-1">
+                                    <label class="control-label" for="txtTalla">Talla</label>
+                                    <input type="text" name="txtTalla" id="txtTalla" class="form-control" maxlength="2" data-parsley-maxlength="2" data-parsley-maxlength-message="Ingrese una Talla válida.">
+                                </div>
+                                <div class="form-group col-md-2">
+                                    <label for="selSigno" class="control-label">Venta</label>
+                                    <div class="input-group">
+                                        <div class="input-group-btn" id="ddbSigno">
+                                            <button type="button" name="btnSigno" id="btnSigno" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-expanded="false" onclick="CambiarSigno(event)">Signo <span class="caret"></span></button>
+                                            <ul class="dropdown-menu dropdown-menu-right" role="menu"></ul>
+                                        </div>
+                                        <input type="text" name="txtVenta" id="txtVenta" class="form-control" aria-label="Cantidad Venta" maxlength="128" data-parsley-maxlength="11" data-parsley-maxlength-message="Ingrese una cantidad de Venta válido." data-parsley-trigger="keyup"
+                                               data-parsley-type="digits">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="divider-dashed"></div>
+                            <div class="row">
+                                <div class="form-group col-md-3">
+                                    <button type="submit" class="btn btn-success" name="btnConsultar" id="btnConsultar" onclick="MostrarReporte(event)">Consultar</button>
+                                    <button type="submit" class="btn btn-default" name="btnLimpiar" id="btnLimpiar" onclick="Limpiar(event)">Limpiar</button>
+                                </div>
+                            </div>
+                            <input type="hidden" name="hddSigno" id="hddSigno" value="" />
+                        </form>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div id="ifrReporte" style="width: 100%; height: 100%;"></div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+@section ViewContent {
+    @Styles.Render("~/Scripts/vendors/select2/dist/css/select2.min.css")
+}
+@section ViewScripts {
+    @Scripts.Render("~/Scripts/vendors/select2/dist/js/select2.full.min.js")
+    @Scripts.Render("~/Scripts/vendors/select2/dist/js/i18n/es.js")
+    @Scripts.Render("~/Scripts/vendors/parsleyjs/dist/parsley.js")
+    @Scripts.Render("~/Scripts/vendors/parsleyjs/dist/i18n/es.js")
+    @Scripts.Render("~/Scripts/bata.app.reporteranking.js")
+}

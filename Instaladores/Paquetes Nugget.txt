@@ -1,0 +1,8 @@
+Net Framework 4
+EntityFramework 6.0.0
+MySQL.Data.Entity 6.9.11
+MySQL.Data 6.9.11
+
+Install-Package Microsoft.AspNet.Web.Optimization -Version 1.1.3
+Install-Package System.Net.Http -Version 4.3.3
+Install-Package ReportViewerForMvc -Version 1.1.1

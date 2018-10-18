@@ -1,0 +1,91 @@
+﻿@using BataEcommerce.Util
+<script type="text/javascript">
+
+    var GLB_GIF_LOADER = "@Url.Content("~/Images/loader.gif")";
+
+    var GLB_RUT_APP_LOGIN = "@Url.Action("Login", "App")";
+    var GLB_RUT_APP_PANEL = "@Url.Action("Panel", "App")";
+
+    var GLB_RUT_APP_REPVEN = "@Url.Action("ReporteVentasView", "Reporte")";
+    var GLB_RUT_APP_REPVTR = "@Url.Action("VentasResumidoView", "Reporte")";
+    var GLB_RUT_APP_REPPED = "@Url.Action("ReportePedidoView", "Reporte")";
+    var GLB_RUT_APP_REPSTO = "@Url.Action("ReporteStocksView", "Reporte")";
+    var GLB_RUT_APP_REPRNK = "@Url.Action("ReporteRankingView", "Reporte")";
+
+    var GLB_RUT_APP_REPVENR = "@Url.Action("ReporteVentas", "Reporte", null, Request.Url.Scheme)";
+    var GLB_RUT_APP_REPVTRR = "@Url.Action("VentasResumido", "Reporte", null, Request.Url.Scheme)";
+    var GLB_RUT_APP_REPPEDR = "@Url.Action("ReportePedido", "Reporte", null, Request.Url.Scheme)";
+    var GLB_RUT_APP_REPSTOR = "@Url.Action("ReporteStocks", "Reporte", null, Request.Url.Scheme)";
+    var GLB_RUT_APP_REPRNKR = "@Url.Action("ReporteRanking", "Reporte", null, Request.Url.Scheme)";
+
+    var GLB_RUT_APP_GETCAT = "@Url.Action("BuscarPsCategory", "App")";
+    var GLB_RUT_APP_GETORS = "@Url.Action("BuscarPsOrderState", "App")";
+    var GLB_RUT_APP_GETEST = "@Url.Action("BuscarEstadoModulo", "App")";
+    var GLB_RUT_APP_GETAPP = "@Url.Action("BuscarAplicacion", "App")";
+    var GLB_RUT_APP_GETTAP = "@Url.Action("BuscarTipoAplicacion", "App")";
+    var GLB_RUT_APP_GETFUN = "@Url.Action("BuscarFuncion", "App")";
+    var GLB_RUT_APP_GETSIS = "@Url.Action("BuscarSistema", "App")";
+    var GLB_RUT_APP_GETROL = "@Url.Action("BuscarRol", "App")";
+    var GLB_RUT_APP_GETFUA = "@Url.Action("BuscarFuncionAplicacion", "App")";
+    var GLB_RUT_APP_GETROF = "@Url.Action("BuscarRolFuncion", "App")";
+    var GLB_RUT_APP_GETBAS = "@Url.Action("BuscarBasico", "App")";
+    var GLB_RUT_APP_GETBAU = "@Url.Action("BuscarBasicoDato", "App")";
+    var GLB_RUT_APP_GETUSU = "@Url.Action("BuscarUsuario", "App")";
+    var GLB_RUT_APP_GETUSR = "@Url.Action("BuscarUsuarioRol", "App")";
+
+    var GLB_RUT_APP_ADDAPP = "@Url.Action("AgregarActualizarAplicacion", "App")";
+    var GLB_RUT_APP_ADDFUN = "@Url.Action("AgregarActualizarFuncion", "App")";
+    var GLB_RUT_APP_ADDROL = "@Url.Action("AgregarActualizarRol", "App")";
+    var GLB_RUT_APP_ADDBAS = "@Url.Action("AgregarActualizarBasicoDato", "App")";
+    var GLB_RUT_APP_ADDFUA = "@Url.Action("AgregarFuncionAplicacion", "App")";
+    var GLB_RUT_APP_ADDROF = "@Url.Action("AgregarRolFuncion", "App")";
+    var GLB_RUT_APP_ADDUSR = "@Url.Action("AgregarUsuarioRol", "App")";
+
+    var GLB_RUT_APP_DELFUA = "@Url.Action("EliminarFuncionAplicacion", "App")";
+    var GLB_RUT_APP_DELROF = "@Url.Action("EliminarRolFuncion", "App")";
+    var GLB_RUT_APP_DELUSR = "@Url.Action("EliminarUsuarioRol", "App")";
+
+    var GLB_MSJ_DEFECTO = "@Configuration.SI_MSJ_TIP_DEFECTO";
+    var GLB_MSJ_EXITO = "@Configuration.SI_MSJ_TIP_EXITO";
+    var GLB_MSJ_ADVERTENCIA = "@Configuration.SI_MSJ_TIP_ADVERTENCIA";
+    var GLB_MSJ_ERROR = "@Configuration.SI_MSJ_TIP_ERROR";
+
+    var GLB_MSJ_POS_TOP = "@Configuration.SI_MSJ_POS_TOP";
+    var GLB_MSJ_POS_BOTTOM = "@Configuration.SI_MSJ_POS_BOTTOM";
+
+    var GLB_MSJ_DES_DEFECTO = "@Configuration.SI_MSJ_DES_DEFECTO";
+    var GLB_MSJ_DES_EXITO = "@Configuration.SI_MSJ_DES_EXITO";
+    var GLB_MSJ_DES_ADVERTENCIA = "@Configuration.SI_MSJ_DES_ADVERTENCIA";
+    var GLB_MSJ_DES_ERROR = "@Configuration.SI_MSJ_DES_ERROR";
+
+    var GLB_WIN_TITLE = "@Configuration.SI_MSJ_WIN_TITLE";
+    var GLB_WIN_LOADER = "@Configuration.SI_MSJ_WIN_LOADER";
+    var GLB_WIN_INFORMACION = "@Configuration.SI_MSJ_WIN_INFORMACION";
+    var GLB_WIN_SINO = "@Configuration.SI_MSJ_WIN_SINO";
+    var GLB_WIN_ADVERTENCIA = "@Configuration.SI_MSJ_WIN_ADVERTENCIA";
+    var GLB_WIN_ERROR = "@Configuration.SI_MSJ_WIN_ERROR";
+
+    var GLB_ALT_TITLE = "@Configuration.SI_MSJ_ALT_TITLE"
+
+    var GLB_INF_APP_NOMBRE = "@Configuration.SI_INF_APP_NOMBRE";
+    var GLB_INF_APP_VERSIO = "@Configuration.SI_INF_APP_VERSION";
+
+    var GLB_DEF_SEL_VALUE = "@Configuration.SI_DEF_SEL_VALUE";
+
+    var GLB_BDD_MOD_TODOS = "@Configuration.SI_BDD_MOD_TODOS";
+    var GLB_BDD_SIS_AQUA2 = "@Configuration.SI_BDD_SIS_AQUA2";
+
+    var GLB_APP_WIN_ACTPRO = "@Configuration.SI_APP_WIN_ACTPRO";
+    var GLB_APP_WIN_CREPRO = "@Configuration.SI_APP_WIN_CREPRO";
+    var GLB_APP_WIN_ACTCLI = "@Configuration.SI_APP_WIN_ACTCLI";
+    var GLB_APP_WIN_CRECLI = "@Configuration.SI_APP_WIN_CRECLI";
+
+
+    var GLB_JSN_DPTO = {};
+    var GLB_JSN_PROV = {};
+    var GLB_JSN_DIST = {};
+    var GLB_JSN_TIP_PER = {};
+    var GLB_JSN_TIP_DOC = {};
+    var GLB_JSN_TIP_USU = {};
+
+</script>

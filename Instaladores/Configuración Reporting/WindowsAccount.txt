@@ -1,0 +1,9 @@
+Credenciales Local
+------------------
+Usuario: OSISTE13\Christian
+Password: Bata123
+
+Credenciales Producción
+-----------------------
+Usuario: 200.60.109.28\SSRSUser2
+Password: iwQXsw6CP%@llw

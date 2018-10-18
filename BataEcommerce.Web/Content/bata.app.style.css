@@ -1,0 +1,224 @@
+﻿
+div.page-title .title_left h2 {
+    font-size: 18px;
+    font-weight: 500;
+    letter-spacing: 0.05rem;
+    color: #2D3B84;
+    line-height: 32px;
+}
+
+div.page-title .title_left img {
+    margin-right: 10px;
+}
+
+.ui-pnotify.translucent.ui-pnotify-fade-in {
+    opacity: 0.8 !important;
+}
+
+/*.ui-pnotify.stack-bar-bottom {
+    width: 70% !important;
+}*/
+
+[id^=dt][readonly].form-control {
+    background-color: #fff !important;
+}
+
+.icon-title {
+    color: #2D3B84 !important;
+}
+
+.icon-rojo {
+    color: #B71C1C !important;
+}
+
+.x_panel .x_title h3 {
+    font-size: 14px;
+    display: inline-block;
+}
+
+.x_panel .x_title i {
+    font-size: 15px;
+    margin-right: 10px;
+}
+
+.panel_toolbox {
+    min-width: 30px !important;
+}
+
+.panel_toolbox i {
+    font-size: 20px !important;
+    margin-right: 0px !important;
+    color: #D42F0B !important;
+}
+.panel_toolbox>li>a {
+    padding: 5px 8px !important;
+}
+
+.x_panel .x_content label {
+    color: #575757 !important;
+}
+
+label {
+    font-weight: 400;
+}
+
+.form-control {
+    border-radius: 3px !important;
+}
+
+.select2 {
+    width: 100% !important;
+}
+
+.select2-container--default .select2-selection--single, .select2-container--default .select2-selection--multiple {
+    border-radius: 3px;
+}
+
+.nopadding {
+    padding-left: 0px !important;
+    padding-right: 0px !important;
+}
+
+.img-fluid {
+   max-width: 100%;
+   height: auto;
+}
+
+/*.form-row {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    margin-right: -5px;
+    margin-left: -5px;
+}*/
+
+/* ~ Bootstrap Modal ~ */
+.modal {
+  text-align: center;
+  padding: 0!important;
+}
+
+.modal:before {
+  content: '';
+  display: inline-block;
+  height: 100%;
+  vertical-align: middle;
+  margin-right: -4px;
+}
+
+.modal-dialog {
+  display: inline-block;
+  text-align: left;
+  vertical-align: middle;
+}
+
+.form-group .input-group {
+    margin-bottom: 0px;
+}
+
+.input-group-btn btn {
+    margin-bottom: 0px;
+}
+
+.row-eq-height {
+  display: flex;
+  display: -webkit-flex;
+  flex-wrap: wrap;
+}
+
+.row-fix-button {
+    position: absolute;
+    bottom: 0;
+    margin-bottom: 0px !important;
+}
+
+
+.page-title .title_left {
+  width: 65% !important;
+}
+.page-title .title_right {
+  width: 35% !important;
+}
+
+.daterangepicker.picker_1 table.table-condensed thead tr:first-child {
+    background: #D32512 !important;
+}
+
+.daterangepicker.picker_1 table.table-condensed thead tr {
+    background: #2E2E2E !important;
+}
+
+.daterangepicker.picker_1 {
+    background: #404040 !important;
+}
+
+.daterangepicker select.monthselect, .daterangepicker select.yearselect {
+    background-color: #d32512 !important;
+}
+
+
+@media (max-width: 767px) {
+    .login_content {
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+    .page-title .title_left {
+        width: 100%;
+    }
+    div.page-title .title_left h2 {
+        line-height: 1.1;
+    }
+    .select2 {
+        width: 100% !important;
+    }
+}
+
+.has-feedback .form-control {
+    padding-right: 15px;
+}
+
+.form-control.has-feedback-left {
+    padding-left: 40px;
+}
+
+.pnotify-icon {
+    background-color: transparent;
+    background-repeat: no-repeat;
+    padding-left: 55px;
+    min-height: 50px;
+    background-size: 50px 50px;
+}
+.pnotify-icon.information { background-image: url("../Images/pnotify/infoicon.png"); }
+.pnotify-icon.warning { background-image: url("../Images/pnotify/waricon.png"); }
+.pnotify-icon.error { background-image: url("../Images/pnotify/erricon.png"); }
+.pnotify-icon.success { background-image: url("../Images/pnotify/sucicon.png"); }
+
+
+.sidebar-footer {
+    background: #2B2929 !important;
+}
+
+    .sidebar-footer a {
+        background: #333333 !important;
+        cursor: pointer !important;
+    }
+
+     .sidebar-footer a span{
+        color: #E7E7E7 !important;
+    }
+
+.user-profile.dropdown-toggle > .img-circle.profile_img {
+    width: 29px !important;
+    background: inherit !important;
+    margin-left: 0px !important;
+    margin-top: 0px !important;
+    margin-right: 10px;
+    z-index: inherit;
+    position: inherit;
+    border: none !important;
+    padding: 0px !important;
+}
+
+    
