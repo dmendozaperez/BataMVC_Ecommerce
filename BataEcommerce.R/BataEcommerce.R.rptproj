@@ -78,13 +78,14 @@
       <Options>
         <OutputPath>bin\Debug</OutputPath>
         <TargetServerVersion>SSRS2008R2</TargetServerVersion>
-        <TargetServerURL>http://200.121.226.85/BataRptSrv</TargetServerURL>
+        <TargetServerURL>http://172.28.7.14/BataRptSrv</TargetServerURL>
         <TargetFolder>Reportes</TargetFolder>
         <TargetDataSourceFolder>Orígenes de datos</TargetDataSourceFolder>
         <OverwriteDataSources>true</OverwriteDataSources>
         <TargetDatasetFolder>Conjuntos de datos</TargetDatasetFolder>
         <OverwriteDatasets>true</OverwriteDatasets>
         <TargetReportPartFolder>Elementos de informe</TargetReportPartFolder>
+        <StartItem>RptPedidosCaidos.rdl</StartItem>
       </Options>
     </Configuration>
     <Configuration>

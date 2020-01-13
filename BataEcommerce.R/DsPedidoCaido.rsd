@@ -29,7 +29,7 @@
           <rd:DbType>String</rd:DbType>
         </DataSetParameter>
       </DataSetParameters>
-      <CommandText>CALL Sp_RptPedidoCaidoCab(?,?,?,?);</CommandText>
+      <CommandText>call Sp_RptPedidoCaidoCab(?, ?, ?, ?);</CommandText>
     </Query>
     <Fields>
       <Field Name="Id">
@@ -44,12 +44,12 @@
         <DataField>Genero</DataField>
         <rd:TypeName>System.String</rd:TypeName>
       </Field>
-      <Field Name="Nombres">
-        <DataField>Nombres</DataField>
-        <rd:TypeName>System.String</rd:TypeName>
-      </Field>
       <Field Name="dni">
         <DataField>dni</DataField>
+        <rd:TypeName>System.String</rd:TypeName>
+      </Field>
+      <Field Name="Nombres">
+        <DataField>Nombres</DataField>
         <rd:TypeName>System.String</rd:TypeName>
       </Field>
       <Field Name="Subtotal">

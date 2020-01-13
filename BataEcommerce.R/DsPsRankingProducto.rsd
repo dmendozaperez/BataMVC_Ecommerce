@@ -41,7 +41,7 @@
           <rd:DbType>String</rd:DbType>
         </DataSetParameter>
       </DataSetParameters>
-      <CommandText>CALL Sp_RptRankingProducto(?, ?, ?, ?, ?, ?)</CommandText>
+      <CommandText>call Sp_RptRankingProducto(?, ?, ?, ?, ?, ?)</CommandText>
     </Query>
     <Fields>
       <Field Name="id_product">

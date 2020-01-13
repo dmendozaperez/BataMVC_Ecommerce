@@ -8,7 +8,7 @@
         <SharedDataSetReference>DsPedidoCaidoDetalle</SharedDataSetReference>
         <QueryParameters>
           <QueryParameter Name="?">
-            <Value>=Parameters!Parameter1.Value</Value>
+            <Value>=Parameters!LiquidacionId.Value</Value>
           </QueryParameter>
         </QueryParameters>
       </SharedDataSet>
@@ -597,20 +597,20 @@
     </ReportSection>
   </ReportSections>
   <ReportParameters>
-    <ReportParameter Name="Parameter1">
+    <ReportParameter Name="LiquidacionId">
       <DataType>String</DataType>
-      <Prompt>Parameter1</Prompt>
+      <Prompt>Liquidacion Id</Prompt>
     </ReportParameter>
   </ReportParameters>
   <ReportParametersLayout>
     <GridLayoutDefinition>
       <NumberOfColumns>4</NumberOfColumns>
-      <NumberOfRows>2</NumberOfRows>
+      <NumberOfRows>3</NumberOfRows>
       <CellDefinitions>
         <CellDefinition>
-          <ColumnIndex>0</ColumnIndex>
+          <ColumnIndex>1</ColumnIndex>
           <RowIndex>0</RowIndex>
-          <ParameterName>Parameter1</ParameterName>
+          <ParameterName>LiquidacionId</ParameterName>
         </CellDefinition>
       </CellDefinitions>
     </GridLayoutDefinition>

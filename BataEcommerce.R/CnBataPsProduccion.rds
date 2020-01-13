@@ -2,7 +2,7 @@
 <RptDataSource xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="CnBataPsProduccion">
   <ConnectionProperties>
     <Extension>ODBC</Extension>
-    <ConnectString>Dsn=Ps Bata Produccion</ConnectString>
+    <ConnectString>Dsn=BATA_E;description=BATA_E;server=138.197.73.71;database=bataecperu;port=3306</ConnectString>
   </ConnectionProperties>
   <DataSourceID>3926dafa-5f35-4cf7-b976-70a5057b0848</DataSourceID>
 </RptDataSource>

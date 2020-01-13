@@ -11,24 +11,13 @@
           <rd:DbType>Object</rd:DbType>
         </DataSetParameter>
       </DataSetParameters>
-      <CommandText>	select
-		ld.Liq_Det_ArtId,
-		CASE
-			WHEN ld.Liq_Det_TalId = '00' THEN ''
-			ELSE ld.Liq_Det_TalId
-		END AS 'Liq_Det_TalId',
-		CASE
-			WHEN ld.Liq_Det_ArtId = '9999997' AND ld.Liq_Det_ArtDes IS NULL THEN 'Transporte Urbano'
-			ELSE ld.Liq_Det_ArtDes
-		END AS 'Liq_Det_ArtDes',
-		cp.Cat_Pri_Descripcion,
-		ld.Liq_det_Cantidad,
-		(ld.Liq_Det_Precio - ld.Liq_Det_Comision) AS Liq_Det_Precio
-	from Liquidacion_Detalle ld
-	left join Articulo a on a.Art_Id = ld.Liq_Det_ArtId
-	left join Categoria_Principal cp on cp.Cat_Pri_Id = a.Art_Cat_PriId
-	where Liq_Det_Id = @LiquidacionId
-	order by Liq_Det_Items asc;</CommandText>
+      <CommandText>SELECT        ld.Liq_Det_ArtId, CASE WHEN ld.Liq_Det_TalId = '00' THEN '' ELSE ld.Liq_Det_TalId END AS 'Liq_Det_TalId', CASE WHEN ld.Liq_Det_ArtId = '9999997' AND ld.Liq_Det_ArtDes IS NULL 
+                         THEN 'Transporte Urbano' ELSE ld.Liq_Det_ArtDes END AS 'Liq_Det_ArtDes', cp.Cat_Pri_Descripcion, ld.Liq_Det_Cantidad, ld.Liq_Det_Precio - ld.Liq_Det_Comision AS Liq_Det_Precio
+FROM            Liquidacion_Detalle AS ld LEFT OUTER JOIN
+                         Articulo AS a ON a.Art_Id = ld.Liq_Det_ArtId LEFT OUTER JOIN
+                         Categoria_Principal AS cp ON cp.Cat_Pri_Id = a.Art_Cat_PriId
+WHERE        (ld.Liq_Det_Id = @LiquidacionId)
+ORDER BY ld.Liq_Det_Items</CommandText>
     </Query>
     <Fields>
       <Field Name="Liq_Det_ArtId">
@@ -48,7 +37,7 @@
         <rd:TypeName>System.String</rd:TypeName>
       </Field>
       <Field Name="Liq_det_Cantidad">
-        <DataField>Liq_det_Cantidad</DataField>
+        <DataField>Liq_Det_Cantidad</DataField>
         <rd:TypeName>System.Decimal</rd:TypeName>
       </Field>
       <Field Name="Liq_Det_Precio">

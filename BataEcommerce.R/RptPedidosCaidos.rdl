@@ -34,6 +34,10 @@
           <DataField>Genero</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
+        <Field Name="dni">
+          <DataField>dni</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
         <Field Name="Nombres">
           <DataField>Nombres</DataField>
           <rd:TypeName>System.String</rd:TypeName>
@@ -41,10 +45,6 @@
         <Field Name="Subtotal">
           <DataField>Subtotal</DataField>
           <rd:TypeName>System.Decimal</rd:TypeName>
-        </Field>
-        <Field Name="dni">
-          <DataField>dni</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
         </Field>
         <Field Name="Igv">
           <DataField>Igv</DataField>
@@ -671,7 +671,7 @@
                         <Subreport Name="SubreportDetallePedidoCaido">
                           <ReportName>RptPedidoCaidoDetalle</ReportName>
                           <Parameters>
-                            <Parameter Name="Parameter1">
+                            <Parameter Name="LiquidacionId">
                               <Value>=Fields!Id.Value</Value>
                             </Parameter>
                           </Parameters>
@@ -1177,7 +1177,6 @@
       <DataType>String</DataType>
       <AllowBlank>true</AllowBlank>
       <Prompt>Param_FechaDesde</Prompt>
-      <Hidden>true</Hidden>
       <UsedInQuery>True</UsedInQuery>
       <cl:ComponentMetadata>
         <cl:HideUpdateNotifications>true</cl:HideUpdateNotifications>
@@ -1187,7 +1186,6 @@
       <DataType>String</DataType>
       <AllowBlank>true</AllowBlank>
       <Prompt>Param_FechaHasta</Prompt>
-      <Hidden>true</Hidden>
       <UsedInQuery>True</UsedInQuery>
       <cl:ComponentMetadata>
         <cl:HideUpdateNotifications>true</cl:HideUpdateNotifications>
@@ -1197,7 +1195,6 @@
       <DataType>String</DataType>
       <AllowBlank>true</AllowBlank>
       <Prompt>Param_Estado</Prompt>
-      <Hidden>true</Hidden>
       <UsedInQuery>True</UsedInQuery>
       <cl:ComponentMetadata>
         <cl:HideUpdateNotifications>true</cl:HideUpdateNotifications>
@@ -1207,7 +1204,6 @@
       <DataType>String</DataType>
       <AllowBlank>true</AllowBlank>
       <Prompt>Param_Cliente</Prompt>
-      <Hidden>true</Hidden>
       <UsedInQuery>True</UsedInQuery>
       <cl:ComponentMetadata>
         <cl:HideUpdateNotifications>true</cl:HideUpdateNotifications>
@@ -1217,27 +1213,27 @@
   <ReportParametersLayout>
     <GridLayoutDefinition>
       <NumberOfColumns>4</NumberOfColumns>
-      <NumberOfRows>2</NumberOfRows>
+      <NumberOfRows>3</NumberOfRows>
       <CellDefinitions>
         <CellDefinition>
           <ColumnIndex>0</ColumnIndex>
           <RowIndex>1</RowIndex>
-          <ParameterName>Param_Cliente</ParameterName>
+          <ParameterName>Param_FechaDesde</ParameterName>
         </CellDefinition>
         <CellDefinition>
           <ColumnIndex>0</ColumnIndex>
           <RowIndex>0</RowIndex>
-          <ParameterName>Param_FechaDesde</ParameterName>
+          <ParameterName>Param_FechaHasta</ParameterName>
         </CellDefinition>
         <CellDefinition>
           <ColumnIndex>1</ColumnIndex>
           <RowIndex>0</RowIndex>
-          <ParameterName>Param_FechaHasta</ParameterName>
+          <ParameterName>Param_Estado</ParameterName>
         </CellDefinition>
         <CellDefinition>
           <ColumnIndex>2</ColumnIndex>
           <RowIndex>0</RowIndex>
-          <ParameterName>Param_Estado</ParameterName>
+          <ParameterName>Param_Cliente</ParameterName>
         </CellDefinition>
       </CellDefinitions>
     </GridLayoutDefinition>

@@ -20,15 +20,15 @@
         </Field>
         <Field Name="Semana">
           <DataField>Semana</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
+          <rd:TypeName>System.Decimal</rd:TypeName>
         </Field>
         <Field Name="Total_Tickets">
           <DataField>Total_Tickets</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
+          <rd:TypeName>System.Int32</rd:TypeName>
         </Field>
         <Field Name="Pares">
           <DataField>Pares</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
+          <rd:TypeName>System.Decimal</rd:TypeName>
         </Field>
         <Field Name="Total_Igv">
           <DataField>Total_Igv</DataField>
@@ -48,15 +48,15 @@
         </Field>
         <Field Name="Semana1">
           <DataField>Semana1</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
+          <rd:TypeName>System.Decimal</rd:TypeName>
         </Field>
         <Field Name="Total_Tickets1">
           <DataField>Total_Tickets1</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
+          <rd:TypeName>System.Int32</rd:TypeName>
         </Field>
         <Field Name="Pares1">
           <DataField>Pares1</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
+          <rd:TypeName>System.Decimal</rd:TypeName>
         </Field>
         <Field Name="Total_Igv1">
           <DataField>Total_Igv1</DataField>
